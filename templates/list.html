@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Pets{% endblock %}
+
+{% block content %}
+<h1>Pets</h1>
+<div class='container'>
+  <div class="row">
+    {% for pet in pets %}
+    <div class="card" style="width: 10rem;">
+      <img src="{{ pet.photo_url }}" class="card-img-top">
+      <div class="card-body">
+        <p class="card-text"><a href="/pets/{{ pet.id }}">{{ pet.name }}</a></p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    <a class="btn btn-secondary btn-sm" href="/pets/new">Add a Pet</a>
+  </div>
+
+
+</div>
+{% endblock %}

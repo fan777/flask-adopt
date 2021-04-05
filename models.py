@@ -1,4 +1,4 @@
-"""Models for Pet Adoption"""
+'''models for pet adoption agency'''
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -8,7 +8,7 @@ def connect_db(app):
     db.init_app(app)
 
 class Pet(db.Model):
-    ___tablename___ = 'pets'
+    __tablename__ = 'pets'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.Text(), nullable=False)
     species = db.Column(db.Text(), nullable=False)
